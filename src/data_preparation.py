@@ -7,6 +7,12 @@ import io
 import requests
 import zipfile
 import chardet
+import requests
+import zipfile
+import io
+import os
+import chardet
+import pandas as pd
 
 class DataLoader:
     def __init__(self, link):
@@ -32,6 +38,32 @@ class DataLoader:
         """
         return link.split('/')[-2]
 
+    def download_and_extract_zip(self, destination_dir):
+        """
+        Downloads a ZIP file from Google Drive and extracts it to the specified directory.
+        
+        Args:
+            destination_dir (str): The directory where the ZIP file should be extracted.
+        
+        Returns:
+            None
+        """
+        try:
+            # Create the destination directory if it doesn't exist
+            os.makedirs(destination_dir, exist_ok=True)
+
+            # Download the ZIP file
+            response = requests.get(self.download_url)
+            response.raise_for_status()  # Raise an exception for bad responses
+
+            # Extract the ZIP file
+            with zipfile.ZipFile(io.BytesIO(response.content)) as z:
+                z.extractall(destination_dir)
+                print(f"Files extracted to {destination_dir}")
+
+        except Exception as e:
+            print(f"Error downloading or extracting ZIP file: {e}")
+
     def load_data_from_drive_zip(self, link):
         """
         Loads data from a zip file on Google Drive containing a text file with pipe-separated data.
@@ -48,7 +80,6 @@ class DataLoader:
             
             # Construct the download URL
             download_url = f'https://drive.google.com/uc?id={file_id}&export=download'
-
 
             # Download the zip file
             response = requests.get(download_url)
