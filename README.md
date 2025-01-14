@@ -1,7 +1,9 @@
-# **TellCo Data Analysis and Profitability Insights**
+# **Rossmann Pharmaceuticals**
 
 ## **Project Overview**
-This project aims to analyze customer data from **TellCo**, a mobile service provider in the Republic of Pefkakia. The objective is to uncover insights that can drive profitability and support the investor's decision-making on whether to acquire TellCo. Deliverables include an analysis report and an interactive web-based dashboard.
+ You work at Rossmann Pharmaceuticals as a Machine Learning Engineer. The finance team wants to forecast sales in all their stores across several cities six weeks ahead of time. Managers in individual stores rely on their years of experience as well as their personal judgment to forecast sales.
+The data team identified factors such as promotions, competition, school and state holidays, seasonality, and locality as necessary for predicting the sales across the various stores.
+
 
 ---
 
