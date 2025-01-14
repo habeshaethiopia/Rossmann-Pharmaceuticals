@@ -1,113 +1,70 @@
-# **Rossmann Pharmaceuticals**
 
-## **Project Overview**
- You work at Rossmann Pharmaceuticals as a Machine Learning Engineer. The finance team wants to forecast sales in all their stores across several cities six weeks ahead of time. Managers in individual stores rely on their years of experience as well as their personal judgment to forecast sales.
-The data team identified factors such as promotions, competition, school and state holidays, seasonality, and locality as necessary for predicting the sales across the various stores.
+# **Rossmann Store Sales Forecasting**
+
+This project focuses on building a machine learning model to forecast sales for Rossmann stores six weeks ahead.
+
+## **Data**
+
+* Source: Rossmann Store Sales | Kaggle
+* Features:
+    * `Store`: Unique identifier for each store.
+    * `Sales`: Daily turnover (target variable).
+    * `Customers`: Number of customers on a given day.
+    * `Open`: Indicates if the store was open (0: closed, 1: open).
+    * `StateHoliday`: Indicates state holidays (a: public, b: Easter, c: Christmas, 0: None).
+    * `SchoolHoliday`: Indicates if the (Store, Date) was affected by school closures.
+    * `StoreType`: Differentiates between 4 store models (a, b, c, d).
+    * `Assortment`: Assortment level (a: basic, b: extra, c: extended).
+    * `CompetitionDistance`: Distance to the nearest competitor store.
+    * `CompetitionOpenSince[Month/Year]`: Approximate opening date of the nearest competitor.
+    * `Promo`: Indicates if a store is running a promo on that day.
+    * `Promo2`: Indicates participation in a continuous and consecutive promotion.
+    * `Promo2Since[Year/Week]`: Start year and week of Promo2 participation.
+    * `PromoInterval`: Describes the consecutive intervals Promo2 is started.
+
+## **Objectives**
+
+1. **Exploration of Customer Purchasing Behavior:**
+    * Analyze customer behavior patterns.
+    * Investigate the impact of promotions, holidays, and competition on sales.
+    * Identify potential areas for improvement in store operations and marketing strategies.
+
+2. **Prediction of Store Sales:**
+    * Develop and evaluate machine learning models to forecast sales six weeks in advance.
+    * Consider various model architectures (e.g., linear regression, time series models, tree-based models).
+
+3. **Machine Learning Approach:**
+    * Implement a robust machine learning pipeline, including data preprocessing, feature engineering, model training, and evaluation.
+    * Tune hyperparameters to optimize model performance.
+
+4. **Deep Learning Approach:**
+    * Explore deep learning models (e.g., recurrent neural networks, convolutional neural networks) for potential performance gains.
+
+5. **Serving Predictions on a Web Interface:**
+    * Develop a user-friendly web interface to deliver sales forecasts to analysts in the finance team.
+
+## **Project Structure**
+
+* `src/`: Contains Python source code for data loading, preprocessing, modeling, and visualization.
+* `notebooks/`: Jupyter Notebooks for exploratory data analysis and model development.
+* `data/`: Stores raw and processed data.
+* `models/`: Stores trained model files.
+* `web_app/`: Contains files for the web application (if applicable).
+* `docs/`: Contains documentation, including this README file.
+* `scripts/`: Contains helper function for modularization.
+* `tests/`: Contains Test document.
 
 
----
+**Logging**
 
-## **Key Objectives**
-1. Perform exploratory data analysis (EDA) to uncover customer behavior patterns.
-2. Identify opportunities for growth and profitability improvement.
-3. Build an interactive dashboard for data exploration and insight visualization.
-4. Develop modular and production-ready Python code to automate workflows and ensure scalability.
+* Utilizes the `logging` library for logging events during the project.
+* Logs are stored in `rossmann_sales_exploration.log`.
 
----
+**Further Steps**
 
-## **Technologies and Tools**
-- **Programming Languages:** Python  
-- **Libraries/Modules:** Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, Prophet  
-- **Data Visualization:** Plotly, Streamlit  
-- **Database:** PostgreSQL  
-- **CI/CD:** GitHub Actions  
-- **Testing:** Pytest  
-- **Web Frameworks:** Flask, Streamlit  
+* Conduct more in-depth feature engineering (e.g., time-based features, lag features).
+* Explore ensemble methods and stacking techniques to improve model performance.
+* Deploy the model to a production environment for real-time predictions.
+* Monitor model performance and retrain periodically to adapt to changing market conditions.
 
----
-
-## **Folder Structure**
-```
-📁 TellCo-Data-Analysis/
-│
-├── .vscode/                # VSCode configuration
-│   └── settings.json       # Editor settings
-│
-├── .github/                # GitHub configuration
-│   └── workflows/
-│       ├── unittests.yml   # CI/CD for running unit tests
-│
-├── .gitignore              # Git ignore file
-│
-├── requirements.txt        # Python dependencies
-│
-├── README.md               # Project overview and guide
-│
-├── src/                    # Source code for the application
-│   ├── __init__.py         # Module initialization
-│
-├── notebooks/              # Jupyter notebooks for data analysis
-│   ├── __init__.py         # Module initialization
-│   └── README.md           # Instructions for using notebooks
-│
-├── tests/                  # Unit tests for the project
-│   ├── __init__.py         # Module initialization
-│
-└── scripts/                # Utility scripts for automation and pipelines
-    ├── __init__.py         # Module initialization
-    └── README.md           # Documentation for scripts
-```
-
----
-
-## **Setup and Installation**
-1. **Clone the repository:**  
-   ```bash
-   git clone https://github.com/username/TellCo-Data-Analysis.git
-   cd TellCo-Data-Analysis
-   ```
-
-2. **Install dependencies:**  
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. **Run the application (e.g., dashboard):**  
-   ```bash
-   streamlit run src/dashboard.py
-   ```
-
-4. **Run unit tests:**  
-   ```bash
-   pytest tests/
-   ```
-
----
-
-## **Usage**
-1. **Notebooks:**  
-   The `notebooks/` folder contains detailed Jupyter notebooks for EDA and ML experiments.  
-
-2. **Scripts:**  
-   The `scripts/` folder holds reusable scripts for ETL, preprocessing, and automation workflows.  
-
-3. **Testing:**  
-   The `tests/` folder includes unit tests to validate the functionality of various modules.  
-
----
-
-## **Deliverables**
-1. **Interactive Dashboard:**  
-   A web-based tool for exploring data and insights.  
-
-2. **Business Report:**  
-   A detailed document summarizing analysis findings and recommendations.  
-
-3. **Codebase:**  
-   Well-organized, modular, and production-ready code.  
-
----
-
-## **Contributors**
-- **[Adane Moges]**  
-
+This README provides a high-level overview of the project. Please refer to the individual files and notebooks for more detailed information.
